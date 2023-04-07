@@ -1,0 +1,77 @@
+Flat profile:
+
+Each sample counts as 0.01 seconds.
+  %   cumulative   self              self     total           
+ time   seconds   seconds    calls   s/call   s/call  name    
+ 94.48     23.66    23.66        5     4.73     4.73  covar(int (*) [4469], int (*) [530], double (*) [4469])
+  3.56     24.55     0.89        5     0.18     0.18  transpose1(double (*) [4469], double (*) [4469])
+  1.28     24.87     0.32        5     0.06     0.06  dot(int*, double (*) [4469], double*)
+  0.36     24.96     0.09                             main
+  0.24     25.02     0.06        5     0.01     0.01  mean(int (*) [4469], double*)
+  0.20     25.07     0.05        5     0.01     0.01  transpose(int (*) [4469], int (*) [530])
+  0.12     25.10     0.03        5     0.01     0.01  shift(int (*) [4469], double*)
+  0.00     25.10     0.00 19591832     0.00     0.00  std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  0.00     25.10     0.00        5     0.00     0.00  dot1(int*, double*)
+  0.00     25.10     0.00        5     0.00     0.00  clearvec1()
+  0.00     25.10     0.00        1     0.00     0.00  _GLOBAL__sub_I_X
+  0.00     25.10     0.00        1     0.00     0.00  __static_initialization_and_destruction_0(int, int)
+
+			Call graph
+
+
+granularity: each sample hit covers 2 byte(s) for 0.04% of 25.10 seconds
+
+index % time    self  children    called     name
+                                                 <spontaneous>
+[1]    100.0    0.09   25.01                 main [1]
+               23.66    0.00       5/5           covar(int (*) [4469], int (*) [530], double (*) [4469]) [2]
+                0.89    0.00       5/5           transpose1(double (*) [4469], double (*) [4469]) [3]
+                0.32    0.00       5/5           dot(int*, double (*) [4469], double*) [4]
+                0.06    0.00       5/5           mean(int (*) [4469], double*) [5]
+                0.05    0.00       5/5           transpose(int (*) [4469], int (*) [530]) [6]
+                0.03    0.00       5/5           shift(int (*) [4469], double*) [7]
+                0.00    0.00 19591832/19591832     std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [14]
+                0.00    0.00       5/5           clearvec1() [16]
+                0.00    0.00       5/5           dot1(int*, double*) [15]
+-----------------------------------------------
+               23.66    0.00       5/5           main [1]
+[2]     94.2   23.66    0.00       5         covar(int (*) [4469], int (*) [530], double (*) [4469]) [2]
+-----------------------------------------------
+                0.89    0.00       5/5           main [1]
+[3]      3.6    0.89    0.00       5         transpose1(double (*) [4469], double (*) [4469]) [3]
+-----------------------------------------------
+                0.32    0.00       5/5           main [1]
+[4]      1.3    0.32    0.00       5         dot(int*, double (*) [4469], double*) [4]
+-----------------------------------------------
+                0.06    0.00       5/5           main [1]
+[5]      0.2    0.06    0.00       5         mean(int (*) [4469], double*) [5]
+-----------------------------------------------
+                0.05    0.00       5/5           main [1]
+[6]      0.2    0.05    0.00       5         transpose(int (*) [4469], int (*) [530]) [6]
+-----------------------------------------------
+                0.03    0.00       5/5           main [1]
+[7]      0.1    0.03    0.00       5         shift(int (*) [4469], double*) [7]
+-----------------------------------------------
+                0.00    0.00 19591832/19591832     main [1]
+[14]     0.0    0.00    0.00 19591832         std::operator|(std::_Ios_Openmode, std::_Ios_Openmode) [14]
+-----------------------------------------------
+                0.00    0.00       5/5           main [1]
+[15]     0.0    0.00    0.00       5         dot1(int*, double*) [15]
+-----------------------------------------------
+                0.00    0.00       5/5           main [1]
+[16]     0.0    0.00    0.00       5         clearvec1() [16]
+-----------------------------------------------
+                0.00    0.00       1/1           __libc_csu_init [22]
+[17]     0.0    0.00    0.00       1         _GLOBAL__sub_I_X [17]
+                0.00    0.00       1/1           __static_initialization_and_destruction_0(int, int) [18]
+-----------------------------------------------
+                0.00    0.00       1/1           _GLOBAL__sub_I_X [17]
+[18]     0.0    0.00    0.00       1         __static_initialization_and_destruction_0(int, int) [18]
+-----------------------------------------------
+
+Index by function name
+
+  [17] _GLOBAL__sub_I_X       [15] dot1(int*, double*)    [16] clearvec1()
+   [3] transpose1(double (*) [4469], double (*) [4469]) [5] mean(int (*) [4469], double*) [6] transpose(int (*) [4469], int (*) [530])
+   [4] dot(int*, double (*) [4469], double*) [2] covar(int (*) [4469], int (*) [530], double (*) [4469]) [14] std::operator|(std::_Ios_Openmode, std::_Ios_Openmode)
+  [18] __static_initialization_and_destruction_0(int, int) [7] shift(int (*) [4469], double*) [1] main
